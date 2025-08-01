@@ -76,9 +76,8 @@ def time_stats(df):
 
 
     # display the most common start hour in military time
-    # diplays how long it took the query to run
-
-    print("\nThis took %s seconds." % (time.time() - start_time))
+D
+s    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -96,7 +95,7 @@ def station_stats(df):
 
     # display most frequent combination of start station and end station trip
 
-    # displays how it took the query to run
+    # Displays how long it took the query to run
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -113,8 +112,7 @@ def trip_duration_stats(df):
 
     # display mean (average) travel time, in military time
 
-    # diplays how long it took the query to run
-    print("\nThis took %s seconds." % (time.time() - start_time))
+D s   print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -132,7 +130,7 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth only for specific cities
 
-    # diplays how long it took the query to run
+    # Displays how long it took the query to run
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -151,7 +149,7 @@ def main():
         if restart.lower() != 'yes':
             break
 
-# Then retarts if they chose to restart
+# Loop to restart the program if the user chooses
 
 if __name__ == "__main__":
 	main()
