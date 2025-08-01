@@ -9,24 +9,38 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
-
-    Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    print("Hello! Let's explore some US bikeshare data!")
 
+    # Get user input for city
+    while True:
+        city = input("Which city? (chicago, new york city, washington): ").lower()
+        if city in CITY_DATA:
+            break
+        else:
+            print("Invalid city. Please try again.")
 
-    # get user input for month (all, january, february, ... , june)
+    # Get user input for month
+    months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+    while True:
+        month = input("Which month? (january to june or 'all'): ").lower()
+        if month in months:
+            break
+        else:
+            print("Invalid month. Please try again.")
 
-
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-
+    # Get user input for day of week
+    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
+    while True:
+        day = input("Which day? (e.g. monday or 'all'): ").lower()
+        if day in days:
+            break
+        else:
+            print("Invalid day. Please try again.")
 
     print('-'*40)
     return city, month, day
+
 
 
 def load_data(city, month, day):
@@ -57,8 +71,8 @@ def time_stats(df):
     # display the most common day of week
 
 
-    # display the most common start hour
-
+    # display the most common start hour in military time
+    # diplays how long it took the query to run
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -78,6 +92,7 @@ def station_stats(df):
 
     # display most frequent combination of start station and end station trip
 
+    # displays how it took the query to run
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -89,12 +104,12 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # display total travel time
+    # display total travel time, in military time
 
 
-    # display mean travel time
+    # display mean (average) travel time, in military time
 
-
+    # diplays how long it took the query to run
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -111,9 +126,9 @@ def user_stats(df):
     # Display counts of gender
 
 
-    # Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth only for specific cities
 
-
+    # diplays how long it took the query to run
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -132,6 +147,7 @@ def main():
         if restart.lower() != 'yes':
             break
 
+# Then retarts if they chose to restart
 
 if __name__ == "__main__":
 	main()
